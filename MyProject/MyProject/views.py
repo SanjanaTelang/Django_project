@@ -9,7 +9,9 @@ def home(request):
 
 def myData(request):
     if (request.POST):
-        fname = request.POST['firstname']
-        return render(request, 'output.html', {'output':fname})
+        num1 = int(request.POST["num1"])
+        num2 = int(request.POST["num2"])
+        result = num1 + num2
+        return render(request, 'output.html', {'output':result})
     else:
         return render(request, 'index.html', {'error': 'please fill the input'})
